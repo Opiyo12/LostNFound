@@ -19,12 +19,13 @@ import java.util.ArrayList;
 public class ItemPostAdapter extends RecyclerView.Adapter<ItemPostAdapter.ViewHolder>{
     private Context context;
     ArrayList<ItemPostModal>list;
+    private int maxItemsToDisplay;
 
-    public ItemPostAdapter(Context context, ArrayList<ItemPostModal> list) {
+    public ItemPostAdapter(Context context, ArrayList<ItemPostModal> list, int maxItemsToDisplay) {
         this.context = context;
         this.list = list;
+        this.maxItemsToDisplay = maxItemsToDisplay;
     }
-
 
     @NonNull
     @Override
@@ -48,7 +49,8 @@ public class ItemPostAdapter extends RecyclerView.Adapter<ItemPostAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return list.size();
+
+         return Math.min(list.size(), maxItemsToDisplay);
     }
 
     public  class ViewHolder extends RecyclerView.ViewHolder{

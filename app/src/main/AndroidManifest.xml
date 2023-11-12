@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LostNFound"
         tools:targetApi="31">
         <activity
+            android:name=".activity.Home_display"
+            android:exported="false" />
+        <activity
             android:name=".activity.FoundedItemPost"
             android:exported="false" />
         <activity

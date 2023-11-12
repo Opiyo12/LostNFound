@@ -10,8 +10,7 @@ import android.view.ViewGroup;
 
 import com.lostnfound.R;
 
-public class MyPostFragment extends Fragment {
-
+public class MenuFragment extends Fragment {
 
 
 
@@ -19,6 +18,7 @@ public class MyPostFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_post2, container, false);
+        View view= inflater.inflate(R.layout.fragment_menu, container, false);
+        return view;
     }
 }
