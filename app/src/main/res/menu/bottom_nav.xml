@@ -9,7 +9,7 @@
         android:icon="@drawable/subscribe"
         />
     <item android:id="@+id/subscribe"
-        android:title="Subscribers Post"
+        android:title="Subscribers"
         android:icon="@drawable/subscribe"
         />
     <item android:id="@+id/menu"

@@ -1,14 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.MenuFragment">
+    android:background="#F1F1F4"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.MenuFragment"
+    >
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/linear"
+        android:background="@color/orange"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Opiyo Brian"
+            android:textAlignment="center"
+            android:visibility="visible"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="TextSizeCheck" />
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="opiyobrian2023@gmail.com"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="visible"
+            android:textStyle="bold"
+            tools:ignore="TextSizeCheck" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    </LinearLayout>
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/list"
+        android:layout_below="@+id/linear"
+        android:scrollbars="none"
+        >
+    </ListView>
 
-</FrameLayout>
+
+</RelativeLayout>

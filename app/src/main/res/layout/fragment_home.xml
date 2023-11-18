@@ -1,93 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-    <LinearLayout
+    android:orientation="vertical"
+    android:background="@color/colorAccent"
+    android:layout_height="match_parent">
+   <com.google.android.material.appbar.AppBarLayout
+       android:id="@+id/appbar"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/colorAccent"
+       >
+       <com.google.android.material.appbar.CollapsingToolbarLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_scrollFlags="scroll"
+           >
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="300dp"
+               android:orientation="vertical"
+               android:background="@drawable/custom_appbar_bg"
+               android:paddingHorizontal="20dp"
+               >
+               <TextView
+                   android:id="@+id/welcome"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/white"
+                   android:textSize="20sp"
+                   android:layout_marginTop="70dp"
+                   android:textStyle="bold"
+                   android:text="Hello Brian, welcome"
+                   />
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/white"
+                   android:textSize="20sp"
+                   android:textStyle="bold"
+                   android:text="You can post and find any lost item here."
+                   />
+               <TextView
+                   android:id="@+id/currentDate"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/white"
+                   android:textSize="17sp"
+                   android:textStyle="bold"
+                   android:text="Thursday, November 2023"
+                   />
+               <EditText
+                   android:layout_marginTop="20dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@drawable/serach_bg"
+                   android:height="50dp"
+                   android:hint="Search..."
+                   android:drawableEnd="@drawable/searchbtn"
+                   android:paddingRight="5dp"
+                   android:paddingStart="15dp"
+                   
+                   />
+           </LinearLayout>
+          <androidx.appcompat.widget.Toolbar
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/toolbar"
+              android:background="@color/orange"
+              app:titleTextColor="@android:color/white"
+              />
+       </com.google.android.material.appbar.CollapsingToolbarLayout>
+   </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         >
-        <androidx.recyclerview.widget.RecyclerView
+        <LinearLayout
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/recyclerview"
-            />
-        <RelativeLayout
-            android:id="@+id/layout"
-            android:layout_below="@+id/recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:orientation="vertical"
             >
-            <TextView
+            <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recent Lost Item"
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:layout_marginStart="2dp"
-                />
-            <TextView
-
-                android:id="@+id/view"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
-                android:text="View All"
-                android:textStyle="bold"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="40dp"
-                />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.recyclerview.widget.RecyclerView
+                android:orientation="vertical"
+                >
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/layout"
+                android:layout_below="@+id/recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/recView"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_marginTop="20dp"
-            android:id="@+id/layout2"
-            android:layout_below="@+id/recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <TextView
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recent Lost Item"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:layout_marginStart="2dp"
+                    />
+                <TextView
+
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:text="View All"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="40dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recView"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:id="@+id/layout2"
+                android:layout_below="@+id/recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recent Found Item"
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:layout_marginStart="2dp"
-                />
-            <TextView
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recent Found Item"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:layout_marginStart="2dp"
+                    />
+                <TextView
 
-                android:id="@+id/view1"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
-                android:text="View All"
-                android:textStyle="bold"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="40dp"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/view1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:text="View All"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="40dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/recView2"
-                />
-        </RelativeLayout>
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recView2"
+                    />
+            </RelativeLayout>
 
-    </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
-</androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

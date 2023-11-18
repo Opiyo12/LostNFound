@@ -1,7 +1,5 @@
 package com.lostnfound.adapter;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -22,11 +20,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class HomeServiceAdapter extends RecyclerView.Adapter<HomeServiceAdapter.MyViewHolder>{
+public class FragmentPostCardClickAdapter extends RecyclerView.Adapter<FragmentPostCardClickAdapter.MyViewHolder>{
     Context mContext;
     List<HomeServiceModal>list;
 
-    public HomeServiceAdapter(Context mContext, List<HomeServiceModal> list) {
+    public FragmentPostCardClickAdapter(Context mContext, List<HomeServiceModal> list) {
         this.mContext = mContext;
         this.list = list;
     }
